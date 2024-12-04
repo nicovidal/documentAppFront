@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDocument } from '../hook/useDocument';
 
-export const Home = () => {
+export const FormularioPage = () => {
     const { getDocument } = useDocument();
 
     const [formData, setFormData] = useState({
@@ -15,7 +15,7 @@ export const Home = () => {
         numeroCaja: ''
     });
 
-    const [documents, setDocuments] = useState([]); 
+    const [documents, setDocuments] = useState([]);
 
     // Obtener documentos al montar el componente
     useEffect(() => {
@@ -119,7 +119,13 @@ export const Home = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {documents.length > 0 ? (
+                    {documents.length === 0 ? (
+                        <tr>
+                            <td colSpan="6" className="text-center">
+                                <strong>No hay documentos disponibles</strong>
+                            </td>
+                        </tr>
+                    ) : (
                         documents.map((doc) => (
                             <tr key={doc.id}>
                                 <td>{doc.id}</td>
@@ -134,13 +140,10 @@ export const Home = () => {
                                 <td>{doc.numeroCaja}</td>
                             </tr>
                         ))
-                    ) : (
-                        <tr>
-                            <td colSpan="6" className="text-center">No hay documentos disponibles</td>
-                        </tr>
                     )}
                 </tbody>
             </table>
+
         </div>
     );
 };
