@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDocument } from '../hook/useDocument';
 
 export const Home = () => {
