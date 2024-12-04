@@ -15,7 +15,7 @@ export const Home = () => {
         numeroCaja: ''
     });
 
-    const [documents, setDocuments] = useState([]); // Estado para los documentos
+    const [documents, setDocuments] = useState([]); 
 
     // Obtener documentos al montar el componente
     useEffect(() => {
