@@ -1,10 +1,12 @@
-import { Home } from "./page/home.jsx"
+import { Home } from "./page/home"
 
 
 export const App=()=>{
 
 
   return(
+    <>
     <Home/>
+    </>
   )
 }
